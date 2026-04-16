@@ -21,44 +21,32 @@ For each skill, the summary should help answer:
 
 When adding, removing, renaming, merging, or significantly changing a skill, update this file in the same change.
 
-## Skills
+## Catalog
 
-### `<skill-name>`
+### `csharp-testing`
 
-**Purpose:** Short explanation of what this skill covers.
-
-**Use when:**
-- condition or type of task
-- condition or type of task
-
-**Key conventions:**
-- important convention
-- important convention
-
-**Supporting files:**
-- `SKILL.md`
-- `examples.md`
-- `template.SomeFile.cs`
-
-**Notes:** Optional extra context, scope boundaries, or overlap guidance.
-
----
-
-### `<another-skill-name>`
-**Purpose:** Short explanation of what this skill covers.
+**Purpose:** Portable C# testing conventions for .NET using NUnit 3, AutoFixture 4, and FakeItEasy 8.
 
 **Use when:**
-- condition or type of task
-- condition or type of task
+
+- creating or refactoring C# tests that use the NUnit + AutoFixture + FakeItEasy stack
+- standardizing test structure and assertion style across repositories
+- bootstrapping a reusable AutoData attribute pattern
 
 **Key conventions:**
-- important convention
-- important convention
+
+- nested fixture structure with NUnit `[TestFixture]`, `[TestOf]`, and `[Test]`
+- test classes are annotated with `[TestOf]` for class or method under test
+- custom `AutoDataProvider` and `InlineAutoDataProvider` attributes with `IFixtureCustomization`-first naming
+- `[Frozen]` dependency ordering before SUT parameters
+- FakeItEasy interaction setup/verification and NUnit constraint assertions
 
 **Supporting files:**
-- `SKILL.md`
 
-**Notes:** Optional extra context.
+- `SKILL.md`
+- `template.AutoDataProviderAttributes.cs`
+
+**Notes:** Includes a cross-repository-friendly AutoData template with extension points for project-specific fixture customizations.
 
 ---
 
