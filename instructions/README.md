@@ -21,6 +21,29 @@ When adding, removing, renaming, merging, or significantly changing an instructi
 
 ## Instruction sets
 
+### `github-development-workflow`
+**Purpose:** Bounded implementation rounds, PR CI discovery/execution, automated recovery, review handling, and merge verification for GitHub repositories.
+
+**Use when:**
+- making changes through a Git client or GitHub File API
+- monitoring PR CI, responding to reviews, or preparing/merging PRs
+
+**Applies to:**
+- public and private GitHub repositories
+- implementation, PR validation, review, and post-merge verification
+
+**Key expectations:**
+- validate coherent implementation milestones, not individual intermediate commits
+- discovery 6 and execution 10 polls at 30-second intervals; resumable pending state
+- independent per-round recovery budgets: lint 3, code 5, transient 3
+- human review threads stay open; merging requires authorization
+- recommend whether a further independent agentic review is warranted
+
+**Supporting files:**
+- [INSTRUCTIONS.md](github-development-workflow/INSTRUCTIONS.md)
+
+---
+
 ### `<instruction-set-name>`
 **Purpose:** Short explanation of what this instruction set controls.
 
